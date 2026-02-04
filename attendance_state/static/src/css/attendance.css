@@ -1,0 +1,34 @@
+.o_attendance_systray_item {
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.o_attendance_systray_item .fa-circle.text-success {
+    color: #28a745 !important;
+}
+
+.o_attendance_systray_item .fa-circle.text-danger {
+    color: #dc3545 !important;
+}
+
+.o_attendance_systray_item .dropdown-toggle::after {
+    display: none;
+}
+
+.o_attendance_systray_item .text-primary {
+    color: #007bff !important;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.o_attendance_systray_item .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.o_attendance_systray_item .btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #212529;
+}

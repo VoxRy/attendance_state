@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="attendance_state.SystrayAttendance">
+        <div class="o_attendance_systray_item dropdown">
+            <a class="dropdown-toggle o-no-caret" data-toggle="dropdown" href="#" role="button" title="Attendance Status">
+                <i t-attf-class="fa fa-circle #{widget.attendance_state == 'checked_in' ? 'text-success' : 'text-danger'}" style="font-size: 14px; vertical-align: middle;"/>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                <div class="p-3 text-center" style="min-width: 250px;">
+                    
+                    <t t-if="widget.attendance_state == 'checked_in'">
+                        <div class="d-flex justify-content-between mb-3">
+                            <div class="text-left">
+                                <small class="text-muted d-block">Since</small>
+                                <span class="h5 mb-0 text-primary o_elapsed_time"><t t-esc="widget.elapsed_time"/></span>
+                            </div>
+                            <div class="text-right">
+                                <small class="text-muted d-block">Total today</small>
+                                <span class="h5 mb-0 text-primary o_total_today"><t t-esc="widget.total_today_display"/></span>
+                            </div>
+                        </div>
+                        <button class="btn btn-warning o_attendance_toggle btn-block btn-lg font-weight-bold">
+                            Check Out <i class="fa fa-sign-out ml-1"/>
+                        </button>
+                    </t>
+                    
+                    <t t-else="">
+                        <div class="mb-3" t-if="widget.total_today > 0.0001">
+                            <small class="text-muted d-block font-weight-bold">Total today</small>
+                            <span class="h3 mb-0 text-primary o_total_today"><t t-esc="widget.total_today_display"/></span>
+                        </div>
+                        <button class="btn btn-success o_attendance_toggle btn-block btn-lg font-weight-bold">
+                            Check In <i class="fa fa-sign-in ml-1"/>
+                        </button>
+                    </t>
+
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
